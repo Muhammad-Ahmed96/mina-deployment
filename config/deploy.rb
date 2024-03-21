@@ -38,6 +38,7 @@ set :shared_dirs, fetch(:shared_dirs, []).push('tmp/pids', 'tmp/sockets')
 set :shared_files, fetch(:shared_files, []).push('config/database.yml', '.env')
 
 set :nodenv_path, '$HOME/.nodenv'
+set :bun_path, '$HOME/.bun'
 
 task :'nodenv:load' do
   comment %(Loading nodenv)
@@ -53,6 +54,13 @@ task :'nodenv:load' do
   command %{eval "$(nodenv init -)"}
 end
 
+task :'bun:load' do
+  comment %(Loading bun)
+  command %(export BUN_ROOT="#{fetch(:bun_path)}")
+  command %(export PATH="#{fetch(:bun_path)}/bin:$PATH")
+  # command %{eval bun init}
+end
+
 # This task is the environment that is loaded for all remote run commands, such as
 # `mina deploy` or `mina rake`.
 task :remote_environment do
@@ -60,6 +68,7 @@ task :remote_environment do
   # Be sure to commit your .ruby-version or .rbenv-version to your repository.
   invoke :'rbenv:load' # comment this line when first run because this will not load as it is not installed yet
   invoke :'nodenv:load' # comment this line when first run because this will not load as it is not installed yet
+  invoke :'bun:load'
 
   # For those using RVM, use this to load an RVM version@gemset.
   # invoke :'rvm:use', 'ruby-3.2.0@default'
@@ -75,8 +84,8 @@ task :setup do
   command %(rbenv exec gem install bundler -v 2.4.1)
   command %(curl -fsSL https://raw.githubusercontent.com/nodenv/nodenv-installer/master/bin/nodenv-installer | bash)
   command %(git -C ~/.nodenv/plugins/node-build pull)
-  command %(nodenv install 18.9.0 --skip-existing)
-  command %(nodenv local 18.9.0)
+  command %(nodenv install 18.14.0 --skip-existing)
+  command %(nodenv local 18.14.0)
   command %(nodenv exec npm install -g yarn)
   command %(curl -fsSL https://bun.sh/install | bash)
   command %(curl -fsSL https://bun.sh/install | bash -s "bun-v1.0.0")
