@@ -74,4 +74,4 @@ end
 gem "puma-daemon", "~> 0.3.2", require: false
 
 gem "mina", "~> 1.2"
-gem 'dotenv', groups: [:development, :test]
+gem "dotenv-rails"
