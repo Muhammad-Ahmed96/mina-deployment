@@ -78,6 +78,8 @@ task :setup do
   command %(nodenv install 18.9.0 --skip-existing)
   command %(nodenv local 18.9.0)
   command %(nodenv exec npm install -g yarn)
+  command %(curl -fsSL https://bun.sh/install | bash)
+  command %(curl -fsSL https://bun.sh/install | bash -s "bun-v1.0.0")
 
   # command %{rvm install ruby-3.2.0}
   # command %{gem install bundler}
