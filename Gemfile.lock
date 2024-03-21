@@ -128,6 +128,11 @@ GEM
       net-smtp
     marcel (1.0.4)
     matrix (0.4.2)
+    mina (1.2.5)
+      rake
+    mina-puma (1.1.0)
+      mina (~> 1.2.0)
+      puma (>= 2.13)
     mini_mime (1.1.5)
     minitest (5.22.3)
     msgpack (1.7.2)
@@ -265,6 +270,8 @@ DEPENDENCIES
   debug
   importmap-rails
   jbuilder
+  mina (~> 1.2)
+  mina-puma
   pg (~> 1.1)
   puma (>= 5.0)
   puma-daemon (~> 0.3.2)

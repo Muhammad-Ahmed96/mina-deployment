@@ -61,6 +61,8 @@ group :development do
 
   # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
   # gem "spring"
+  # Mina puma commands
+  gem 'mina-puma', require: false
 end
 
 group :test do
@@ -70,3 +72,5 @@ group :test do
 end
 
 gem "puma-daemon", "~> 0.3.2", require: false
+
+gem "mina", "~> 1.2"
