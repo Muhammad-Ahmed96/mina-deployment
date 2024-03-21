@@ -68,3 +68,5 @@ group :test do
   gem "capybara"
   gem "selenium-webdriver"
 end
+
+gem "puma-daemon", "~> 0.3.2", require: false
