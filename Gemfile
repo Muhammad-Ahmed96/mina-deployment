@@ -63,6 +63,8 @@ group :development do
   # gem "spring"
   # Mina puma commands
   gem 'mina-puma', require: false
+  # Mina sidekiq commands
+  gem 'mina-sidekiq', require: false
 end
 
 group :test do
@@ -71,7 +73,4 @@ group :test do
   gem "selenium-webdriver"
 end
 
-gem "puma-daemon", "~> 0.3.2", require: false
-
 gem "mina", "~> 1.2"
-gem "dotenv-rails"
