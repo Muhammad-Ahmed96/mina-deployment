@@ -15,7 +15,7 @@ require 'mina_sidekiq/tasks'
 set :rails_env, 'production'
 
 set :application_name, 'headhunt'
-set :domain, '51.20.221.101'
+set :domain, '51.21.58.41'
 set :deploy_to, '/home/ubuntu/headhunt'
 set :repository, 'git@github.com:Muhammad-Ahmed96/mina-deployment.git'
 set :branch, 'main'
