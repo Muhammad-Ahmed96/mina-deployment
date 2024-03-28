@@ -74,3 +74,4 @@ group :test do
 end
 
 gem "mina", "~> 1.2"
+gem 'dotenv-rails'
