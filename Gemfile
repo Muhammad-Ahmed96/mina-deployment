@@ -72,6 +72,6 @@ group :test do
   gem "capybara"
   gem "selenium-webdriver"
 end
-
+gem 'puma-daemon', require: false
 gem "mina", "~> 1.2"
 gem 'dotenv-rails'
