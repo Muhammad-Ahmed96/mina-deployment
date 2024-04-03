@@ -80,8 +80,8 @@ end
 task :setup do
   command %(curl -fsSL https://github.com/rbenv/rbenv-installer/raw/HEAD/bin/rbenv-installer | bash)
   command %(git -C ~/.rbenv/plugins/ruby-build pull)
-  command %(rbenv install 3.3.0 --skip-existing)
-  command %(rbenv local 3.3.0)
+  command %(rbenv install 3.1.1 --skip-existing)
+  command %(rbenv local 3.1.1)
   command %(rbenv exec gem install bundler -v 2.4.1)
   command %(curl -fsSL https://raw.githubusercontent.com/nodenv/nodenv-installer/master/bin/nodenv-installer | bash)
   command %(git -C ~/.nodenv/plugins/node-build pull)
