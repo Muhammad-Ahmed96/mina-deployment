@@ -15,7 +15,7 @@ require 'mina_sidekiq/tasks'
 set :rails_env, 'production'
 
 set :application_name, 'headhunt'
-set :domain, '3.235.49.177'
+set :domain, '16.16.116.227'
 set :deploy_to, '/home/ubuntu/headhunt'
 set :repository, 'git@github.com:Muhammad-Ahmed96/mina-deployment.git'
 set :branch, 'main'
@@ -39,7 +39,7 @@ set :shared_dirs, fetch(:shared_dirs, []).push('tmp/pids', 'tmp/sockets')
 set :shared_files, fetch(:shared_files, []).push('config/database.yml', '.env')
 
 set :nodenv_path, '$HOME/.nodenv'
-set :bun_path, '$HOME/.bun'
+# set :bun_path, '$HOME/.bun'
 
 task :'nodenv:load' do
   comment %(Loading nodenv)
@@ -88,8 +88,8 @@ task :setup do
   command %(nodenv install 18.9.0 --skip-existing)
   command %(nodenv local 18.9.0)
   command %(nodenv exec npm install -g yarn)
-  command %(curl -fsSL https://bun.sh/install | bash )
-  command %(curl -fsSL https://bun.sh/install | bash -s "bun-v1.0.0")
+  # command %(curl -fsSL https://bun.sh/install | bash )
+  # command %(curl -fsSL https://bun.sh/install | bash -s "bun-v1.0.0")
 
   # command %{rvm install ruby-3.2.0}
   # command %{gem install bundler}
