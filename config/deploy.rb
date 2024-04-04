@@ -15,7 +15,7 @@ require 'mina_sidekiq/tasks'
 set :rails_env, 'production'
 
 set :application_name, 'headhunt'
-set :domain, '13.50.200.21'
+set :domain, '3.235.49.177'
 set :deploy_to, '/home/ubuntu/headhunt'
 set :repository, 'git@github.com:Muhammad-Ahmed96/mina-deployment.git'
 set :branch, 'main'
@@ -55,20 +55,20 @@ task :'nodenv:load' do
   command %{eval "$(nodenv init -)"}
 end
 
-task :'bun:load' do
-  comment %(Loading bun)
-  command %(export BUN_ROOT="#{fetch(:bun_path)}")
-  command %(export PATH="#{fetch(:bun_path)}/bin:$PATH")
-end
+# task :'bun:load' do
+#   comment %(Loading bun)
+#   command %(export BUN_ROOT="#{fetch(:bun_path)}")
+#   command %(export PATH="#{fetch(:bun_path)}/bin:$PATH")
+# end
 
 # This task is the environment that is loaded for all remote run commands, such as
 # `mina deploy` or `mina rake`.
 task :remote_environment do
   # If you're using rbenv, use this to load the rbenv environment.
   # Be sure to commit your .ruby-version or .rbenv-version to your repository.
-  invoke :'rbenv:load' # comment this line when first run because this will not load as it is not installed yet
-  invoke :'nodenv:load' # comment this line when first run because this will not load as it is not installed yet
-  invoke :'bun:load' # loading bun
+  # invoke :'rbenv:load' # comment this line when first run because this will not load as it is not installed yet
+  # invoke :'nodenv:load' # comment this line when first run because this will not load as it is not installed yet
+  # invoke :'bun:load' # loading bun
 
 
   # For those using RVM, use this to load an RVM version@gemset.
